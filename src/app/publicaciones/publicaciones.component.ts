@@ -49,6 +49,18 @@ export class PublicacionesComponent implements OnInit {
     {
       imagen: '../assets/images/Post 9.png',
       id: 9
+    },
+    {
+      imagen: '../assets/images/Post 10.png',
+      id: 10
+    },
+    {
+      imagen: '../assets/images/Post 11.png',
+      id: 11
+    },
+    {
+      imagen: '../assets/images/Post 12.png',
+      id: 12
     }
   ];
 
