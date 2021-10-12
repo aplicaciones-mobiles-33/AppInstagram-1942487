@@ -1,0 +1,63 @@
+{
+    "usuario": {
+            "nombre": "ruffles", 
+            "seguidores": 4389308, 
+            "siguiendo": 3, 
+            "posts": 12,
+            "bio": "soy adoptado pero mi famila me ama",
+            "avatar": "avatar.jpg",
+            "publicaciones": [
+              "Post 1.png",
+              "Post 2.png",
+              "Post 3.png",
+              "Post 4.png",
+              "Post 5.png",
+              "Post 6.png",
+              "Post 7.png",
+              "Post 8.png",
+              "Post 9.png",
+              "Post 10.png",
+              "Post 11.png",
+              "Post 12.png"
+            ]
+  
+    },
+    "publicaciones": [
+    
+        {
+          "id": 1, 
+          "usuario": "ruffles",
+          "imagenPost": "../assets/images/feed/feed1.png",
+          "avatarUsuario": "../assets/images/avatar.jpg",
+          "descripcionPost": "hello hello helloo"
+        }, 
+        {
+          "id": 2, 
+          "usuario": "max",
+          "imagenPost": "../assets/images/feed/feed2.png",
+          "avatarUsuario": "../assets/images/avatar.jpg",
+          "descripcionPost": "holaaaa"
+        },
+        {
+          "id": 3, 
+          "usuario": "oreo",
+          "imagenPost": "../assets/images/feed/feed3.png",
+          "avatarUsuario": "../assets/images/avatar.jpg",
+          "descripcionPost": "la pura vida <3"
+        },
+        {
+          "id": 4, 
+          "usuario": "ruffles",
+          "imagenPost": "../assets/images/feed/feed4.png",
+          "avatarUsuario": "../assets/images/avatar.jpg",
+          "descripcionPost": "<3  <3 <3 <3 "
+        },
+        {
+          "id": 5, 
+          "usuario": "corgimaya",
+          "imagenPost": "../assets/images/feed/feed5.png",
+          "avatarUsuario": "../assets/images/avatar.jpg",
+          "descripcionPost": "Si nos va a llevar pues que nos lleve en limosina"
+        }
+      ]
+}

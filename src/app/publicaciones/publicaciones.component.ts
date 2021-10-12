@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionPageRoutingModule } from '../publicacion/publicacion-routing.module';
+import { HttpClient } from '@angular/common/http';
+import * as data from '../../assets/feed.json';
 
 export interface Publicaciones{
+  id: number; 
   imagen: string;
-  id: number;
 }
 
 @Component({
@@ -64,8 +67,36 @@ export class PublicacionesComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  datos = data;
+  publicaciones: any = this.datos.publicaciones;
+  usuario: any = this.datos.usuario;
+  datosUsuario: string = this.usuario.nombre;
 
-  ngOnInit() {}
+  constructor(private http: HttpClient) { }
+
+  publicacionesPorUsuario = [];
+
+  get filtrarPublicaciones(): string {
+    return this.datosUsuario;
+  }
+
+  set filtrarPublicaciones(valor: string){
+    this.datosUsuario = valor;
+    this.publicacionesPorUsuario = this.filtroPublicaciones(valor);
+  }
+
+  filtroPublicaciones(nombreUsuario: string){
+     nombreUsuario = nombreUsuario.toLocaleLowerCase();
+     return this.publicaciones.filter((publicacion: any)=> publicacion.usuario.toLocaleLowerCase().includes(nombreUsuario));
+  }
+
+  ngOnInit() {
+
+    this.filtrarPublicaciones = this.datosUsuario;
+    this.http.get('../../assets/feed.json').subscribe(datos =>{
+      console.log(datos);
+    })
+
+  }
 
 }

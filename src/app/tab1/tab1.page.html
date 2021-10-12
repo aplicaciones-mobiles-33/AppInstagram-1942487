@@ -12,6 +12,33 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-grid>
+    <ion-row *ngFor="let post of publicaciones">
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-content>
+             <ion-card-header>
+               <ion-grid>
+                 <img src="../../assets/images/avatar.jpg" alt="" id="profilepic">
+               </ion-grid>
+             </ion-card-header>
+              <ion-card-content>
+                <a [routerLink]="['../publicacion', post.id]">
+                  <img src="{{post.imagenPost}}" alt="">
+                </a>
+                
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+                <div class="opciones">
+                  <ion-col size="12">
+                    <ion-icon name="paper-plane-outline" class="option"></ion-icon>
+                    <ion-icon name="heart-outline" class="option"></ion-icon>
+                  </ion-col>
+                </div>
+              </ion-card-content>
+            </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 </ion-content>
