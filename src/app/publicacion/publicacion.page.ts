@@ -16,9 +16,12 @@ export class PublicacionPage implements OnInit {
   datos = data;
   filterPublicaciones: any;
   publicaciones: any = this.datos.publicaciones;
+  publicacionId: any;
+
 
   constructor(private ruta: ActivatedRoute, private _location : Location) { }
 
+  /*
   get filtrarPublicaciones(): number {
     return this.idPublicacion;
   }
@@ -31,6 +34,7 @@ export class PublicacionPage implements OnInit {
   filtroPublicaciones(idPublicacion: number): any {
     return this.publicaciones.find((publicacion: any) => publicacion.id == idPublicacion);
   }
+  */
 
   volver(): void {
     this._location.back();
@@ -38,11 +42,19 @@ export class PublicacionPage implements OnInit {
 
   ngOnInit() {
 
+    this.ruta.queryParams.subscribe(params => {
+      console.log(params);
+      this.idPublicacion = params.publicacionId;
+      console.log(this.idPublicacion);
+    }
+    )
+
+    /*
     this.idPublicacion = this.ruta.snapshot.params.publicacionId;
     console.log(this.idPublicacion);
     this.filtrarPublicaciones = this.idPublicacion;
     console.log(this.filterPublicaciones)
-    
+    */
 
     //this.idPublicacion = this.RutaActiva.snapshot.params.id;
     //console.log(this.idPublicacion);

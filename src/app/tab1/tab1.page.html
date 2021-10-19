@@ -20,13 +20,16 @@
              <ion-card-header>
                <ion-grid>
                  <img src="../../assets/images/avatar.jpg" alt="" id="profilepic">
+                 {{post.usuario}}
+
+                 {{post.key}}
                </ion-grid>
              </ion-card-header>
               <ion-card-content>
-                <a [routerLink]="['../publicacion', post.id]">
-                  <img src="{{post.imagenPost}}" alt="">
-                </a>
-                
+                <a [routerLink]="['/tabs/p']" [queryParams] ="{publicacionId: post.key}"> <img src="{{post.urlFoto}}" alt=""></a>
+            <p>
+              {{post.caption}}
+            </p>
 
                 <div class="opciones">
                   <ion-col size="12">
