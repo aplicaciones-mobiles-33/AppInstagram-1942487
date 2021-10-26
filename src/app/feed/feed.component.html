@@ -1,0 +1,36 @@
+<ion-grid>
+  <ion-row *ngFor="let publicacion of publicaciones">
+    <ion-col size="12">
+      <ion-card>
+      <ion-card-content>
+        <ion-card-header>
+          <ion-grid>
+           
+            <img src="../../assets/images/avatar.jpg" alt="" height="23px" id="profilepic">
+            <strong> {{publicacion.usuario}}</strong>
+
+          <span style="opacity: 0">  {{publicacion.key}}</span>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+          
+          
+         <a [routerLink]="['/tabs/p', publicacion.key]"> 
+          <p>
+            {{publicacion.caption}}
+          </p>
+          <img src="{{publicacion.urlFoto}}" alt=""></a>
+         <!-- [queryParams] ="{publicacionId: publicacion.key}"-->
+         
+          <div class="opciones">
+            <ion-col size="12">
+              <ion-icon name="paper-plane-outline" class="option"></ion-icon>
+              <ion-icon name="heart-outline" class="option"></ion-icon>
+            </ion-col>
+          </div>
+        </ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FirebaseDbService } from '../firebase-db.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,9 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab3Page implements OnInit {
   
-  constructor(private http: HttpClient) {
+  constructor(private db: FirebaseDbService) {
     
-  
   }
 
   description: String;
@@ -21,27 +21,25 @@ export class Tab3Page implements OnInit {
   posts: number;
 
   obtenerPerfil() : void {
-    this.http.get('https://instagramapp-2f603-default-rtdb.firebaseio.com/usuario.json')
-    .subscribe(respuesta => {
+    this.db.getPerfilUsuario().subscribe(respuesta => {
       console.log(respuesta);
 
-      let res = Object.assign(respuesta);
+      let perfilUsuario = Object.assign(respuesta);
 
-      this.description = res.description;
-      this.nombre = respuesta['nombre'];
-      this.followers = respuesta['followers'];
-      this.following = respuesta['following'];
-      this.usuario = respuesta['nombre']
+      this.description = perfilUsuario.description;
+      this.nombre = perfilUsuario.nombre;
+      this.followers = perfilUsuario.followers;
+      this.following = perfilUsuario.following;
+      this.usuario = perfilUsuario.usuario;
     })
   }
    
 
   obtenerPublicaciones() :void {
-   this.http.get('https://instagramapp-2f603-default-rtdb.firebaseio.com/publicaciones.json')
-   .subscribe(responseData => {
-     console.log(responseData);
-   })
-  }
+    this.db.getPublicaciones().subscribe(res => {
+      console.log(res);
+    })
+   }
 
   ngOnInit() {
     this.obtenerPerfil();
