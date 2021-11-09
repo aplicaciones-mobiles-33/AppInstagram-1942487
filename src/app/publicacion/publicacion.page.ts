@@ -18,6 +18,7 @@ export class PublicacionPage implements OnInit {
   filterPublicaciones: any;
   publicaciones: any = this.datos.publicaciones;
   publicacionId: any;
+  descripcionPost: String;
   urlFoto: String;
 
 
@@ -49,18 +50,16 @@ export class PublicacionPage implements OnInit {
 
     //agregar FN para obtenerDetalle de publicacion
 
-    /*
     this.db.getPublicacion(param).subscribe(res=> {
       console.log(res);
 
       let respuesta = Object.assign(res);
 
-      this.publicacion = respuesta.caption;
+      this.descripcionPost = respuesta.descripcionPost;
       this.usuario = respuesta.usuario;
-      this.urlFoto = respuesta.urlFoto;
-     
+      this.urlFoto = respuesta.urlImagen;
+
     })
-    */
     
   }
 
@@ -69,6 +68,8 @@ export class PublicacionPage implements OnInit {
     this.idPublicacion = this.RutaActiva.snapshot.params.id;
 
     console.log(this.RutaActiva.snapshot.params.id);
+
+    this.obtenerDetallePublicacion(this.idPublicacion);
  
   
     /*
