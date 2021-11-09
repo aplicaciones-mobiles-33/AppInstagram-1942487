@@ -49,6 +49,7 @@ export class PublicacionPage implements OnInit {
 
     //agregar FN para obtenerDetalle de publicacion
 
+    /*
     this.db.getPublicacion(param).subscribe(res=> {
       console.log(res);
 
@@ -59,6 +60,7 @@ export class PublicacionPage implements OnInit {
       this.urlFoto = respuesta.urlFoto;
      
     })
+    */
     
   }
 
@@ -68,7 +70,6 @@ export class PublicacionPage implements OnInit {
 
     console.log(this.RutaActiva.snapshot.params.id);
  
-    this.obtenerDetallePublicacion(this.idPublicacion);
   
     /*
     this.ruta.queryParams.subscribe(params => {

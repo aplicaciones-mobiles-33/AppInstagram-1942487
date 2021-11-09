@@ -11,13 +11,16 @@ import { HttpClientModule } from '@angular/common/http';
 //Firebase
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat'
-
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { FirebaseDbService } from './firebase-db.service'; //TBD
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)],
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule, AngularFireDatabaseModule], 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

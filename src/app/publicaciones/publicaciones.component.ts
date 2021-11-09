@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicacionPageRoutingModule } from '../publicacion/publicacion-routing.module';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 //import * as data from '../../assets/feed.json';
 //import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import { FirebaseDbService } from '../firebase-db.service';
@@ -17,8 +17,7 @@ export interface Publicaciones{
 })
 export class PublicacionesComponent implements OnInit {
   
-  constructor(private db: FirebaseDbService
-    ) { }
+  constructor(private db: FirebaseDbService) { }
 
    publicaciones = [];
 

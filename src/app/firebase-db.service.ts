@@ -3,12 +3,19 @@ import {HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
 
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+//import {Firestore, collection, collectionData} from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore'
+
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseDbService {
 
-  constructor(private http: HttpClient) { }
+  constructor( private http: HttpClient,
+    private fbdb: AngularFireDatabase) { 
+    
+  }
 
   resArray = [];
 
@@ -52,6 +59,10 @@ export class FirebaseDbService {
 
   updateNombreUsuario(nuevoNombreUsuario) {
     return this.http.get('https://instagramapp-2f603-default-rtdb.firebaseio.com/usuario/nombre.json', nuevoNombreUsuario);
+  }
+
+  getPublicacionesUsuario() {
+    return this.fbdb.list('/publicaciones', ref => ref.orderByChild('usuario').equalTo('Ruffles'));
   }
 
 }
