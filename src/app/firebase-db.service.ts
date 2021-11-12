@@ -58,11 +58,16 @@ export class FirebaseDbService {
   }
 
   updateNombreUsuario(nuevoNombreUsuario) {
-    return this.http.get('https://instagramapp-2f603-default-rtdb.firebaseio.com/usuario/nombre.json', nuevoNombreUsuario);
+    console.log(nuevoNombreUsuario);
+    return this.http.put('https://instagramapp-2f603-default-rtdb.firebaseio.com/usuario/nombre.json', nuevoNombreUsuario);
   }
 
   getPublicacionesUsuario() {
     return this.fbdb.list('/publicaciones', ref => ref.orderByChild('usuario').equalTo('Ruffles'));
+  }
+
+  crearCampoTest(test) {
+    return this.http.post('https://instagramapp-2f603-default-rtdb.firebaseio.com/usuario/testCampo', test);
   }
 
 }

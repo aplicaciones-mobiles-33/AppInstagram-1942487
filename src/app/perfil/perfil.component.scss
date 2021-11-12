@@ -1,0 +1,23 @@
+.avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.bold {
+    font-weight: 700;
+    display: block;
+
+}
+
+.datos {
+    text-align: center;
+}
+
+.usuario {
+    ion-col {
+        display: flex;
+        align-self: center;
+        flex-flow: column;
+    }
+} 
